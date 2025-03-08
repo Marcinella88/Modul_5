@@ -16,7 +16,18 @@ wizytowka_5 = buissnes_card(name="Maryla",surname="Sawicka", company="Integra De
 
 wizytowki_all = (wizytowka_1,wizytowka_2,wizytowka_3,wizytowka_4,wizytowka_5)
 
-for dane in wizytowki_all:
+by_name = sorted(wizytowki_all, key=lambda buissnes: buissnes.name)
+by_surname = sorted(wizytowki_all, key=lambda buissnes: buissnes.surname)
+by_email = sorted(wizytowki_all, key=lambda buissnes: buissnes.email_address)
+
+print("Według imienia:")
+for dane in by_name:
     print(dane.name, dane.surname, dane.email_address)
 
-print(type(wizytowki_all))
+print("Według nazwiska:")
+for dane in by_surname:
+    print(dane.name, dane.surname, dane.email_address)
+
+print("Według email:")
+for dane in by_email:
+    print(dane.name, dane.surname, dane.email_address)
